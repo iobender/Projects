@@ -1,0 +1,5 @@
+This is a program to find pu to the nth digit.
+
+n is entered through stdin. 
+
+Run with -q or --quiet to suppress messages. 
