@@ -1,0 +1,9 @@
+Displays the nth Fibonacci number.
+
+n is given through stdin. 
+
+fibonacci.py [options]
+
+	-a, --all: Displays all the Fibonacci numbers through n
+
+	-q, --quiet: Supresses messages
