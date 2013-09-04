@@ -47,6 +47,13 @@ def fib(n):
 		return result
 
 fib_n= fib(n)
-print(fib_n)
+
+if all:
+	for fib in fib_n:
+		sys.stdout.write(str(fib) + " ")
+	sys.stdout.write("\n")
+else:
+	sys.stdout.write(str(fib_n[-1]) + "\n")
+
 
 
