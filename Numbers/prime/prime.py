@@ -2,7 +2,7 @@
 
 import sys
 
-quiet= False;
+quiet= False; #True to suppress messages
 for arg in sys.argv:
 	if(arg == "--quiet"):
 		quiet= True
@@ -14,6 +14,7 @@ if not(quiet):
 	sys.stdout.write("Program to find all prime factors of n.\nEnter n: ")
 user_input= sys.stdin.readline()
 
+#tests if n is a non-negative integer
 def validate(n):
 	try:
 		n= int(n)
@@ -25,6 +26,7 @@ def validate(n):
 validate(user_input)
 n= int(user_input)
 
+#returns if n is prime (considers 0 and 1 prime for simplicity)
 def is_prime(n):
 	if n == 0 or n == 1 or n == 2:
 		return True
@@ -36,19 +38,22 @@ def is_prime(n):
 				return False
 		return True
 
-factors= []
-i= 2
-limit= n ** .5
+factors= [] #list to hold all factors
+i= 2 #first viable prime
+limit= n ** .5 #necessary limit to check for factors is sqrt(n)
 while i <= limit:
-	if is_prime(i):
-		if n % i == 0:
+	if is_prime(i): 
+		if n % i == 0: #n is divisible by this prime
 			factors.append(i)
 			n /= i
-			i -= 1
+			i -= 1 #reset i to same
 	i += 1
-if not n == 1:
+if not n == 1: #remaining number
 	factors.append(n)
+#can be sped up by first getting all 2's, then only checking odds
 
+
+#prints compact version of factorization, with a^x * b * c^z
 i= 0
 while i < len(factors):
 	counter= 1

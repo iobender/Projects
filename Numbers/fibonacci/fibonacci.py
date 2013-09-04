@@ -2,8 +2,8 @@
 
 import sys
 
-quiet= False;
-all= False;
+quiet= False; #True to suppress messages
+all= False; #True to print all fib numbers up to n
 for arg in sys.argv:
 	if(arg == "--quiet"):
 		quiet= True
@@ -19,6 +19,7 @@ if not(quiet):
 	sys.stdout.write("Program to find the nth Fibonacci number.\nEnter n: ")
 user_input= sys.stdin.readline()
 
+#ensures n is a non-negative integer
 def validate(n):
 	try:
 		n= int(n)
@@ -30,6 +31,8 @@ def validate(n):
 validate(user_input)
 n= int(user_input)
 
+#returns a list of the fibonacci numbers from 0 to n
+#runs interatively in O(n) time
 def fib(n):
 	if n == 0:
 		return [0]
