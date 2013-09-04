@@ -54,6 +54,9 @@ while i < len(factors):
 	counter= 1
 	while counter + i < len(factors) and factors[i] == factors[i + counter]:
 		counter += 1
-	print(str(factors[i]) + ("" if counter == 1 else "^" + str(counter)))
+	sys.stdout.write(str(factors[i]) + ("" if counter == 1 else "^" + str(counter)))
 	i= i + counter
+	if not i == len(factors):
+		sys.stdout.write(" * ")
+sys.stdout.write("\n")
 
