@@ -1,0 +1,2 @@
+Prints the cost of tiling a floor with a width and height, where width, height, and cost are entered on stdin. 
+
